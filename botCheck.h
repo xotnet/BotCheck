@@ -53,7 +53,7 @@ void genBotCheckTask(char* taskOutput /*64 characters*/, int hardLevel) {
 	strcpy(taskOutput, begTask);
 	taskOutput[4] = '|';
 	char hlStr[16];
-	sprintf(hlStr,"%ld", finalHardLevel);
+	sprintf(hlStr,"%d", finalHardLevel);
 	strcpy(taskOutput+5, hlStr);
 	int charC = char_count(taskOutput);
 	taskOutput[charC] = '|';
@@ -74,18 +74,14 @@ void passBotCheck(char* task, char* solution /*16 characters*/) {
 	int hardLevel = atoi(hardLVLStr);
 
 	// power proof bot check passing
-	char sha256hash[32];
 	char sha256Hex[65];
 	int x = 0;
-	int index = 0;
+	unsigned long int index = 0;
 	int baseLen = char_count(base);
 	while (1) {
 		sprintf(base+baseLen,"%ld", index);
-		sha256(base, char_count(base), sha256hash);
-		for(int d = 0; d<32; d++){
-      sprintf(sha256Hex+d*2, "%02x", sha256hash[d]);
-    }
-    sha256Hex[64] = '\0';
+		sha256_easy_hash_hex(base, char_count(base), sha256Hex);
+		sha256Hex[64] = '\0';
     //printf("%s\n", sha256Hex);
 		while (1) {
 			if (sha256Hex[x] == '0' || sha256Hex[x] == '1' || sha256Hex[x] == '2' || sha256Hex[x] == '4') {
@@ -100,6 +96,10 @@ void passBotCheck(char* task, char* solution /*16 characters*/) {
 		}
 		x = 0;
 		index++;
+		if (index>10000000) {
+			strcpy(solution, "0");
+			return;
+		}
 	}
 }
 
@@ -116,14 +116,10 @@ unsigned short int confirmBotCheckTask(char* task, char* solution) {
 	}
 	int hardLevel = *hardLVLStr - '0';
 	i++;
-	char sha256hash[32];
 	char sha256Hex[65];
 	strcpy(base+char_count(base), solution);
-	sha256(base, char_count(base), sha256hash);
+	sha256_easy_hash_hex(base, char_count(base), sha256Hex);
 	int x = 0;
-	for(int d = 0; d<32; d++){
-    sprintf(sha256Hex+d*2, "%02x", sha256hash[d]);
-  }
   sha256Hex[64] = '\0';
 	while (1) {
 		if (sha256Hex[x] == '0' || sha256Hex[x] == '1' || sha256Hex[x] == '2' || sha256Hex[x] == '4') {
