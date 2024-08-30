@@ -6,7 +6,7 @@ of connection. To bypass this check the attacker must have very large computing 
 Also this check method allows dont keep blocked IP's, check user-agent or system which
 can be spoofed.
 Hard level is the number of characters equal to the beginning of the hash.
-
+****
 **```SERVER```**
 
 **genBotCheckTask**(char* taskOutput, int hardLevel) - **Generate bot check task**
@@ -16,7 +16,7 @@ Hard level is the number of characters equal to the beginning of the hash.
 **```CLIENT```**
 
 **passBotCheck**(char* task, char* solution) - **Takes task and put result to solution**
-
+****
 **test.c** contains all BotCheck lib functions, example output:
 ```
 Dqqh|8|              <- Dqqh is task base, 8 is hardLevel 
@@ -29,6 +29,14 @@ Client is't bot! :)
 |8|0 sec|
 |10|0.4 sec|
 |12|5 sec|
+****
+
+|Hard level|SHA256 client\`s calls|SHA256 server\`s calls|
+|---|---|---|
+|8|>20k|1|
+|10|>3kk|1|
+|12|>15kk|1|
+
 
 > [!WARNING]
 > Too low a level of complexity reduces the verification time, but also makes such a check unreliable
