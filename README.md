@@ -40,3 +40,6 @@ Client is't bot! :)
 
 > [!WARNING]
 > Too low a level of complexity reduces the verification time, but also makes such a check unreliable
+
+
+![image](img/robot.jpg)
