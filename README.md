@@ -26,10 +26,9 @@ Client is't bot! :)
  
 |Hard level| ~Time |
 |---|---|
-|4|0 sec|
-|8|0.1 sec|
-|10|1.5 sec|
-|12|8 sec|
+|8|0 sec|
+|10|0.4 sec|
+|12|5 sec|
 
 > [!WARNING]
 > Too low a level of complexity reduces the verification time, but also makes such a check unreliable
