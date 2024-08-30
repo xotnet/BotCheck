@@ -23,3 +23,13 @@ Dqqh|8|              <- Dqqh is task, 8 is hardLevel
 Solution is: 132975
 Client is't bot! :)
 ```
+ 
+|Hard level| ~Time |
+|---|---|
+|4|0 sec|
+|8|0.1 sec|
+|10|1.5 sec|
+|12|8 sec|
+
+> [!WARNING]
+> Too low a level of complexity reduces the verification time, but also makes such a check unreliable
