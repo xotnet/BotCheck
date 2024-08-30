@@ -1,4 +1,3 @@
-# BotCheck
 **Fast bot check for low level (TCP/UDP) protocols without IP, UserAgent or System check based on proof of work.**
 
 Checking for a bot is done with proof of work. Client needs to find
@@ -17,3 +16,10 @@ Hard level is the number of characters equal to the beginning of the hash.
 **```CLIENT```**
 
 **passBotCheck**(char* task, char* solution) - **Takes task and put result to solution**
+
+**test.c** contains all BotCheck lib functions, example output:
+```
+Dqqh|8|              <- Dqqh is task, 8 is hardLevel 
+Solution is: 132975
+Client is't bot! :)
+```
