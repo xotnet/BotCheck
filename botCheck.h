@@ -96,10 +96,6 @@ void passBotCheck(char* task, char* solution /*16 characters*/) {
 		}
 		x = 0;
 		index++;
-		if (index>10000000) {
-			strcpy(solution, "0");
-			return;
-		}
 	}
 }
 
