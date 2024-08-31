@@ -1,7 +1,7 @@
 #include "botCheck.h"
 int main() {
 	char botCheckTask[64];
-	genBotCheckTask(botCheckTask, 12);
+	genBotCheckTask(botCheckTask, 10);
 	printf("%s\n", botCheckTask);
 
 	char solution[16];
