@@ -19,8 +19,8 @@ Hard level is the number of characters equal to the beginning of the hash.
 ****
 **test.c** contains all BotCheck lib functions, example output:
 ```
-Dqqh|8|              <- Dqqh is task base, 8 is hardLevel 
-Solution is: 132975
+ziMs|10|19vngX8Q|     <-    baseToHash | HardLevel | Salt
+Solution is: 2299
 Client is't bot! :)
 ```
  
